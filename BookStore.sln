@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreWeb", "BookStoreWeb\BookStoreWeb.csproj", "{2CF04B38-4D6B-434C-B943-09C78ABF6477}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreWebRazor_Temp", "BookStoreRazor_Temp\BookStoreWebRazor_Temp.csproj", "{F1278963-8F5B-427E-BA96-B126EE495884}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreWebRazor_Temp", "BookStoreRazor_Temp\BookStoreWebRazor_Temp.csproj", "{F1278963-8F5B-427E-BA96-B126EE495884}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
