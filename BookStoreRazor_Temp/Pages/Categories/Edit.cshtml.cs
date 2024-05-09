@@ -29,6 +29,7 @@ namespace BookStoreWebRazor_Temp.Pages.Categories
             {
                 _db.Categories.Update(Category);
                 _db.SaveChanges();
+                TempData["success"] = "Category was edited successfully";
                 return RedirectToPage("Index");
             }
             return Page();

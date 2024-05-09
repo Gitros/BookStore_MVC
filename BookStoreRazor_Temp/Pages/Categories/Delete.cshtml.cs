@@ -30,6 +30,7 @@ namespace BookStoreWebRazor_Temp.Pages.Categories
             }
             _db.Categories.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Category was deleted successfully";
             return RedirectToPage("Index");
         }
     }
