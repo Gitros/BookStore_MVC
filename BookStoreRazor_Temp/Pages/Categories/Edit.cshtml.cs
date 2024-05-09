@@ -20,14 +20,19 @@ namespace BookStoreWebRazor_Temp.Pages.Categories
         {
             if (id != null || id != 0)
                 {
-                    Category? categoryFromDb = _db.Categories.Find(id);
+                    Category = _db.Categories.Find(id);
                 }
         }
-        public IActionResult OnEdit()
+        public IActionResult OnPost()
         {
-            _db.Categories.Update(Category);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Update(Category);
+                _db.SaveChanges();
+                return RedirectToPage("Index");
+            }
+            return Page();
         }
+        
     }
 }
