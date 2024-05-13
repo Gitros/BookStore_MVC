@@ -24,7 +24,7 @@ namespace BookStoreWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            if(obj.Name == obj.DisplayOrder.ToString())
+            if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("name", "The Display Order cannot exactly match the Name.");
             }
@@ -40,7 +40,7 @@ namespace BookStoreWeb.Controllers
 
         public IActionResult Edit(int? id)
         {
-            if(id==null || id==0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
