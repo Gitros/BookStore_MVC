@@ -4,6 +4,7 @@ using BookStore.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240606165453_AddCompanyToDb")]
+    partial class AddCompanyToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,38 +96,6 @@ namespace BookStore.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Ropczyce",
-                            Name = "Piccolo Ropczyce",
-                            PhoneNumber = "952321525",
-                            PostalCode = "39100",
-                            State = "Ropczycko-Sędziszowski",
-                            StreetAddress = "14 Wyszyńskiego"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "Warszawa",
-                            Name = "Ezsat",
-                            PhoneNumber = "952321525",
-                            PostalCode = "124567",
-                            State = "Mazurskie",
-                            StreetAddress = "10 Sportowa"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Ropczyce",
-                            Name = "Owczarnia",
-                            PhoneNumber = "243165521",
-                            PostalCode = "39100",
-                            State = "Ropczycko-Sędziszowski",
-                            StreetAddress = "3 maja"
-                        });
                 });
 
             modelBuilder.Entity("BookStore.Models.Product", b =>

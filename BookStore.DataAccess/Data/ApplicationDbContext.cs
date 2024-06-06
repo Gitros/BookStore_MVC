@@ -27,21 +27,26 @@ namespace BookStore.DataAccess.Data
                 new Category { Id = 2, Name = "Manga", DisplayOrder = 2 },
                 new Category { Id = 3, Name = "History", DisplayOrder = 3 }
                 );
+            modelBuilder.Entity<Company>().HasData(
+                new Company { Id = 1, Name = "Piccolo Ropczyce", StreetAddress = "14 Wyszyńskiego", City = "Ropczyce", PostalCode="39100", State="Ropczycko-Sędziszowski", PhoneNumber="952321525" },
+                new Company { Id = 2, Name = "Ezsat", StreetAddress = "10 Sportowa", City = "Warszawa", PostalCode = "124567", State = "Mazurskie", PhoneNumber = "952321525" },
+                new Company { Id = 3, Name = "Owczarnia", StreetAddress = "3 maja", City = "Ropczyce", PostalCode = "39100", State = "Ropczycko-Sędziszowski", PhoneNumber = "243165521" }
+                );
 
             modelBuilder.Entity<Product>().HasData(
-                new Product 
-                { 
-                    Id = 1, 
-                    Title = "The Witcher", 
-                    Description = "The book narrates the adventures of Geralt of Rivia, a Witcher - a monster hunter and slayer. The series of stories showcases a dark and mysterious world where magic, monsters, and political intrigue intertwine.", 
-                    ISBN = "9788382951486", 
-                    Author= "Andrzej Sapkowski", 
-                    ListPrice = 90, 
-                    Price = 70, 
-                    Price50 = 50, 
+                new Product
+                {
+                    Id = 1,
+                    Title = "The Witcher",
+                    Description = "The book narrates the adventures of Geralt of Rivia, a Witcher - a monster hunter and slayer. The series of stories showcases a dark and mysterious world where magic, monsters, and political intrigue intertwine.",
+                    ISBN = "9788382951486",
+                    Author = "Andrzej Sapkowski",
+                    ListPrice = 90,
+                    Price = 70,
+                    Price50 = 50,
                     Price100 = 30,
                     CategoryId = 1,
-                    ImageUrl=""
+                    ImageUrl = ""
                 },
                 new Product
                 {

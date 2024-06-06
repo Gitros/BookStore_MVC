@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240606154043_AddCompanyToDb")]
-    partial class AddCompanyToDb
+    [Migration("20240606171330_AddCompanyRecords")]
+    partial class AddCompanyRecords
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -75,30 +75,59 @@ namespace BookStore.DataAccess.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int");
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StreetAddress")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "Ropczyce",
+                            Name = "Piccolo Ropczyce",
+                            PhoneNumber = "952321525",
+                            PostalCode = "39100",
+                            State = "Ropczycko-Sędziszowski",
+                            StreetAddress = "14 Wyszyńskiego"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            City = "Warszawa",
+                            Name = "Ezsat",
+                            PhoneNumber = "952321525",
+                            PostalCode = "124567",
+                            State = "Mazurskie",
+                            StreetAddress = "10 Sportowa"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            City = "Ropczyce",
+                            Name = "Owczarnia",
+                            PhoneNumber = "243165521",
+                            PostalCode = "39100",
+                            State = "Ropczycko-Sędziszowski",
+                            StreetAddress = "3 maja"
+                        });
                 });
 
             modelBuilder.Entity("BookStore.Models.Product", b =>
