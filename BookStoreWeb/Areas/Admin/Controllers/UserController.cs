@@ -34,8 +34,14 @@ namespace BookStoreWeb.Areas.Admin.Controllers
         {
             List<ApplicationUser> objUserList = _db.ApplicationUsers.Include(u=>u.Company).ToList();
 
-            foreach(var user in objUserList)
+            var userRoles = _db.UserRoles.ToList();
+            var roles = _db.Roles.ToList();
+
+            foreach (var user in objUserList)
             {
+                var roleId = userRoles.FirstOrDefault(u=>u.UserId==user.Id).RoleId;
+                user.Role = roles.FirstOrDefault(u => u.Id == roleId).Name;
+
                 if(user.Company == null)
                 {
                     user.Company = new() { Name = "" };
@@ -48,8 +54,6 @@ namespace BookStoreWeb.Areas.Admin.Controllers
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
-           
-
             return Json(new { success = true, message = "Delete Successful" });
         }
         #endregion
