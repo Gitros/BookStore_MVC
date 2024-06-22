@@ -2,7 +2,6 @@ using BookStore.DataAccess.Repository.IRepository;
 using BookStore.Models;
 using BookStore.Utility;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Security.Claims;

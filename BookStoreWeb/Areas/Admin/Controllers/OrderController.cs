@@ -3,11 +3,9 @@ using BookStore.Models;
 using BookStore.Models.ViewModels;
 using BookStore.Utility;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Stripe;
 using Stripe.Checkout;
-using System.Diagnostics;
 using System.Security.Claims;
 
 namespace BookStoreWeb.Areas.Admin.Controllers
